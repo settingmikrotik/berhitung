@@ -1,0 +1,168 @@
+/* Styling umum */
+* {
+    font-family: Calibri;
+    font-size: 1rem;
+    color: #8c9d60; /* Warna dasar teks: Biru Neon */
+    text-shadow: 0 0 5px #030606, 0 0 10px #00e0ff; /* Efek glow neon */
+}
+
+/* Background HTML dan Body */
+html, body {
+    height: 100%;
+    margin: 0;
+    /* Tidak perlu text-shadow di sini karena ini untuk elemen, bukan teks langsung */
+}
+
+/* MyDiagramDiv (Area Diagram) */
+#myDiagramDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    background-color:#17ff03;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Splitter Panel */
+#splitterPanel {
+    position: absolute;
+    display: none;
+    width: 190px;
+    background: rgb(28 193 25 / 20%); /* Background hijau transparan, agar sesuai tema neon */
+    border: 1px solid #00e0ff; /* Border biru neon */
+    padding: 10px;
+    box-shadow: 0 0 10px #4e20da, 0 0 20px #00e0ff; /* Efek glow yang lebih kuat */
+    z-index: 10;
+    color: #b16b6b; /* Teks di panel ini juga biru neon */
+    text-shadow: 0 0 5px #5247f5, 0 0 10px #00e0ff; /* Efek glow neon */
+}
+
+#splitterSelect {
+    width: 100%;
+    background: rgb(4 1 1); /* Background gelap transparan */
+    color: #091618; /* Teks di dropdown biru neon */
+    border: 1px solid #8c6dba; /* Border biru neon */
+    text-shadow: 0 0 3px #030505; /* Efek glow yang lebih halus */
+}
+
+/* Kontrol Button dan Select */
+#controls {
+    margin: 0px 10px;
+    text-align: center;
+    width: 100px; /* Diubah dari 65px agar pas dengan lebar 100% button */
+    position: absolute;
+    top: 10px; /* Tambahkan top untuk posisi di kiri atas */
+    right: 20px; /* Tambahkan left untuk posisi di kiri atas */
+    z-index: 10;
+}
+
+#controls button, #controls select {
+    margin: 0px 0px 5px 0px;
+    padding: 5px;
+    width: 100%; /* Disesuaikan agar memenuhi lebar controls */
+    cursor: pointer;
+    background: rgb(14 49 255); /* Background gelap transparan */
+    border: 1px solid #5211e8; /* Border biru neon */
+    color: #ffffff; /* Teks button biru neon */
+    text-shadow: 0 0 5px #000000cc, 0 0 10px #00e0ff; /* Efek glow neon */
+    border-radius: 5px; /* Sedikit rounded corner */
+}
+
+#controls button:hover, #controls select:hover {
+    box-shadow: 0 0 15px #ffffff, 0 0 25px #00e0ff; /* Efek glow lebih kuat saat hover */
+    background: rgb(255 0 0 / 90%);
+}
+
+/* JSON Area (jika terlihat, teksnya akan biru neon) */
+#jsonArea {
+    width: 95%;
+    height: 120px;
+    margin: 10px auto;
+    display: none;
+    background: rgb(136 33 33 / 80%); /* Background gelap transparan */
+    color: #00e0ff; /* Teks biru neon */
+    border: 1px solid #00e0ff; /* Border biru neon */
+    text-shadow: 0 0 5px #00e0ff; /* Efek glow neon */
+}
+
+/* Header Container */
+.header-container {
+    position: relative;
+    z-index: 10;
+}
+
+/* H1 (Judul Utama) */
+h1 {
+    font-size: xxx-large;
+    width: 100%;
+    color: #f0f0f0; /* Judul utama: Biru Neon */
+    text-align: center;
+    margin: 0px;
+    padding: 11px 0px;
+    z-index: 10;
+    text-shadow: 0 0 10px #000000, 0 0 20px #8364c8, 0 0 30px #00e0ff; /* Efek glow super kuat */
+}
+
+h1:hover {
+    color: ; /* Sedikit putih saat hover */
+    text-shadow: 0 0 20px #fc1e1e, 0 0 40px #00e0ff, 0 0 60px #00e0ff; /* Lebih intens saat hover */
+}
+
+/* Legend */
+.legend {
+    position: absolute;
+   left: 10px; /* Pindah ke kanan atas */
+    top: 10px; /* Pindah ke kanan atas */
+    z-index: 3;
+    float: right; /* Ini akan dipengaruhi oleh absolute positioning, bisa dihapus */
+    background: rgb(0 0 0 / 70%); /* Background gelap transparan untuk legenda */
+    border: 1px solid #00e0ff; /* Border biru neon */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #00e0ff;
+}
+
+.block {
+    height: 1.5rem;
+    width: 3rem;
+    position: relative;
+    margin-bottom: 2px;
+}
+
+.level {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #8d2f2f; /* Tetap gelap agar kontras dengan warna blok level */
+}
+
+.label {
+    position: absolute;
+    right: 3.2rem;
+    transform: translateY(1rem);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    color: #00e0ff; /* Teks label legenda biru neon */
+    text-shadow: 0 0 3px #00e0ff; /* Efek glow lebih halus */
+}
+
+/* Splitter Select (Dropdown) */
+#splitterSelect {
+    background: black; /* Background gelap transparan */
+    color: #00e0ff; /* Teks di dalam select biru neon */
+    border: 1px solid #00e0ff; /* Border biru neon */
+    text-shadow: 0 0 3px #00e0ff; /* Efek glow lebih halus */
+}
+
+/* Jika Anda ingin opsi individual di dropdown juga berwarna neon (terkadang perlu menargetkan 'option' secara langsung) */
+#splitterSelect option {
+    background: rgba(0, 0, 0, 0.9); /* Background opsi gelap */
+    color: #00e0ff; /* Teks opsi biru neon */
+    text-shadow: none; /* Hapus shadow jika terlalu banyak */
+}
