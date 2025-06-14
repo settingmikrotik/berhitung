@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Splitter Calculator</title>
+  <script src="../../unpkg.com/gojs%403.0.23/release/go-debug.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vnetnetwork.my.id/incloude/css/style.css">
+  <link rel="stylesheet" href="vnetnetwork.my.id/incloude/css/popup.css">
+
+ 
+</head>
+
+<body>
+<div class="header-container">
+  <h1>Rasio</h1>
+  <div id="controls">
+    <button onclick="resetDiagram()">Reset boz</button>
+    <button onclick="undoAction()">Undo</button>
+    <button onclick="autoCenter()">Center</button>
+    <button onclick="exportPng()">Export</button>
+    <button onclick="saveJson()">Save</button>
+    <input type="file" id="loadFile" accept=".json" onchange="loadJsonFromFile()" style="display:none" />
+    <button onclick="document.getElementById('loadFile').click()">Load</button>
+    <button onclick="toggleDiagramOrientation()">Layout</button>
+    <select id="linkStyleSelect" style="text-align:center" onchange="changeLinkStyle()">
+      <option value="ortho1">Style1</option>
+      <option value="ortho2">Style2</option>
+      <option value="normal">Style3</option>
+      <option value="bezier">Style4</option>
+    </select>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="block"><div class="label">0</div><div class="level" id="level1" style="background:#0086d4"></div></div>
+  <div class="block"><div class="label">-8</div><div class="level" id="level2" style="background:#00BCD4"></div></div>
+  <div class="block"><div class="label">-16</div><div class="level" id="level3" style="background:#4CAF50"></div></div>
+  <div class="block"><div class="label">-18</div><div class="level" id="level4" style="background:#8BC34A"></div></div>
+  <div class="block"><div class="label">-20</div><div class="level" id="level5" style="background:#CDDC39"></div></div>
+  <div class="block"><div class="label">-23</div><div class="level" id="level6" style="background:#FFC107"></div></div>
+  <div class="block"><div class="label">-25</div><div class="level" id="level7" style="background:#FF9800"></div></div>
+  <div class="block"><div class="label">-28</div><div class="level" id="level8" style="background:#F44336"></div></div>
+  <div class="block"><div class="label"></div><div class="level" id="level9" style="background:#666666"></div></div>
+</div>
+
+<div id="myDiagramDiv"></div>
+
+<div id="splitterPanel">
+  <label>Select Splitter:</label><br>
+  <select id="splitterSelect"></select><br>
+  <div id="splitterEstimate" style="margin-top:8px; color:gray;"></div>
+  <div style="display: flex; gap: 6px; margin-top: 6px;">
+    <button style="flex: 1;" onclick="confirmAddSplitter()">OK</button>
+    <button style="flex: 1;" onclick="cancelAddSplitter()">Cancel</button>
+  </div>
+</div>
+<!-- Popup warning box -->
+<div id="alertBox">
+  <button id="closeBtn" onclick="closeAlert()">❌</button>
+  <div id="alertContent"></div>
+</div>
+<textarea id="jsonArea" placeholder="JSON model"></textarea>
+<script src="vnetnetwork.my.id/incloude/js/script.js"></script>
+<script src="vnetnetwork.my.id/incloude/js/pup.js"></script>
+
+<script>
+  function getGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+    let greeting;
+
+    if (hour >= 4 && hour < 10) {
+      greeting = "🌤️ Selamat Pagi! boz wifi yg ganteng tekan OK untuk lanjut!";
+    } else if (hour >= 10 && hour < 15) {
+      greeting = "🌞 Selamat Siang! boz wifi yg gantengi tekan OK untuk lanjut!";
+    } else if (hour >= 15 && hour < 18) {
+      greeting = "🌇 Selamat Sore! boz wifi yg ganteng tekan OK untuk lanjut!";
+    } else {
+      greeting = "🌙 Selamat Malam! boz wifi yg ganteng tekan OK untuk lanjut!";
+    }
+
+    return greeting;
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const greeting = getGreeting();
+    alert(greeting); // Ganti alert() 
+  });
+</script>
+
+
+</body>
+</html>
